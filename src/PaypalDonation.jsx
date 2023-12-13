@@ -1,5 +1,6 @@
 import React from 'react';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+import './PaypalDonation.css';
 
 const PayPalDonation = () => {
   const PAYPAL_CLIENT_ID = 'AS5gyGIGmISI51YuHxa77F4CYHxhRHvOfymUHp1O0xMtAQyiOWC7xLNiNjGpig93DLLjG0OepQUeT_6-';
@@ -7,6 +8,7 @@ const PayPalDonation = () => {
   return (
     <PayPalScriptProvider options={{ 'client-id': 'AS5gyGIGmISI51YuHxa77F4CYHxhRHvOfymUHp1O0xMtAQyiOWC7xLNiNjGpig93DLLjG0OepQUeT_6-' }}>
       <div className="paypal-button-container">
+        <div><h1>Help us with $5 today!</h1></div>
       <PayPalButtons
         style={{ layout: 'horizontal', justifyContent: 'right' }} // Customize the layout as needed
         createOrder={(data, actions) => {
@@ -14,7 +16,7 @@ const PayPalDonation = () => {
             purchase_units: [
               {
                 amount: {
-                  value: '10.00', // Adjust the donation amount as needed
+                  value: '5.00', // Adjust the donation amount as needed
                 },
               },
             ],
